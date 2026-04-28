@@ -124,12 +124,26 @@
     .hero {
       display: grid;
       grid-template-columns: 1fr 420px;
+      grid-template-rows: auto auto;
       gap: 5rem;
       align-items: start;
       padding: 7rem 0 6rem;
     }
 
-    .hero-left {}
+    .hero-left {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .form-panel {
+      grid-column: 2;
+      grid-row: 1 / 3;
+    }
+
+    .stats {
+      grid-column: 1;
+      grid-row: 2;
+    }
 
     .eyebrow {
       display: flex;
@@ -222,6 +236,7 @@
       padding: 2.75rem 2.25rem;
       position: sticky;
       top: 2rem;
+      align-self: start;
     }
 
     .form-panel-eyebrow {
@@ -422,10 +437,13 @@
     @media (max-width: 860px) {
       .hero {
         grid-template-columns: 1fr;
+        grid-template-rows: auto;
         gap: 3.5rem;
         padding: 5rem 0 4rem;
       }
-      .form-panel { position: static; }
+      .hero-left { grid-column: 1; grid-row: auto; }
+      .form-panel { grid-column: 1; grid-row: auto; position: static; }
+      .stats { grid-column: 1; grid-row: auto; }
       .pillars { grid-template-columns: 1fr; gap: 0; }
       .pillar {
         border-right: none;
@@ -470,21 +488,6 @@
           </div>
 
           <h1><em>High Leverage</em> For<br>Professional Investors.</h1>
-
-          <div class="stats">
-            <div class="stat">
-              <div class="stat-value">High Leverage</div>
-              <div class="stat-label">Up to 105% LTC</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">Close Quickly</div>
-              <div class="stat-label">Close in as little as 5 days</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">Easy Application</div>
-              <div class="stat-label">We handle everything with software to streamline the application process</div>
-            </div>
-          </div>
         </div>
 
         <!-- Signup form -->
@@ -494,6 +497,22 @@
           <div class="gold-rule"></div>
           <div class="_form_1"></div>
           <script src="https://fullstacklending.activehosted.com/f/embed.php?id=1" charset="utf-8"></script>
+        </div>
+
+        <!-- Stats — after form in HTML so it appears below form on mobile -->
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-value">High Leverage</div>
+            <div class="stat-label">Up to 105% LTC</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">Close Quickly</div>
+            <div class="stat-label">Close in as little as 5 days</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">Easy Application</div>
+            <div class="stat-label">We handle everything with software to streamline the application process</div>
+          </div>
         </div>
 
       </section>
